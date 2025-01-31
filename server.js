@@ -894,27 +894,3 @@ app.post('/api/insertar-admin', (req, res) => {
   });
 });
 
-
-// Obtener departamentos no autorizados
-app.get('/api/departamentos-no-autorizados', (req, res) => {
-  const query = `
-    SELECT nombre_departamento, usuario, contrasena, departamento_id, fecha_registro
-    FROM departamentos_no_autorizados
-  `;
-
-  db.query(query, (err, results) => {
-    if (err) {
-      console.error('Error al obtener los departamentos no autorizados:', err);
-      return res.status(500).json({ error: 'Error al obtener los datos de la base de datos' });
-    }
-
-    // Si no hay resultados, enviar un mensaje claro
-    if (results.length === 0) {
-      return res.status(404).json({ message: 'No se encontraron departamentos no autorizados' });
-    }
-
-    // Respuesta exitosa con los datos
-    return res.status(200).json({ departamentosNoAutorizados: results });
-  });
-});
-
