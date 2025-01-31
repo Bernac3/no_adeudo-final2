@@ -7,11 +7,11 @@ import { DepartamentosResponse } from '../interfaces/departamentos-no-autorizado
   providedIn: 'root'
 })
 export class PeticionesService {
-  private apiUrl = 'https://no-adeudo.onrender.com/departamento/insertar-peticion';  // API de inserción de peticiones
-  private apiUrlAdmin = 'https://no-adeudo.onrender.com/admin/actualizar-peticion-Adm';  // API de inserción de peticiones
-  private apiUrlDepartamentosNoAutorizados = 'https://no-adeudo.onrender.com/admin/departamentos-no-autorizados';
-  private apiUrlInsertarDepartamentosNoAutorizados = 'https://no-adeudo.onrender.com/admin/insertar-departamentos-no-autorizados';
-  private apiUrlInsertarAdmn = 'https://no-adeudo.onrender.com/admin/insertar-admin'
+  private apiUrl = 'http://localhost:3000/api/insertar-peticion';  // API de inserción de peticiones
+  private apiUrlAdmin = 'http://localhost:3000/api/actualizar-peticion-Adm';  // API de inserción de peticiones
+  private apiUrlDepartamentosNoAutorizados = 'http://localhost:3000/api/departamentos-no-autorizados';  // API de inserción de peticiones
+  private apiUrlInsertarDepartamentosNoAutorizados = 'http://localhost:3000/api/insertar-departamentos-no-autorizados';
+  private apiUrlInsertarAdmn = 'http://localhost:3000/api/insertar-admin'
 
   constructor(private http: HttpClient) {}
 

@@ -8,7 +8,7 @@ import { Alumno } from '../interfaces/alumno.interface';
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = 'https://no-adeudo.onrender.com/auth/login';
+  private apiUrl = 'http://localhost:3000/api/login';
 
   private userSubject = new BehaviorSubject<Alumno | null>(null);
 
@@ -92,7 +92,7 @@ export class AuthService {
    */
   getAlumnosYPeticiones(): Observable<Alumno[]> {
     //problema aqui
-    const urlAlumnosypeticiones = 'https://no-adeudo.onrender.com/common/alumnos-peticiones';
+    const urlAlumnosypeticiones = 'http://localhost:3000/api/alumnos-peticiones';
     // const url = 'https://no-adeudo-repositorio-1.onrender.com/alumno/alumnos-peticiones';
     return this.http.get<Alumno[]>(urlAlumnosypeticiones, { responseType: 'json' }).pipe(
       catchError((error: HttpErrorResponse) => {
